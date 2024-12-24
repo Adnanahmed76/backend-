@@ -76,7 +76,7 @@ const app =express();
 // routess
 
 app.get('/',function(req,res){
-    res.send("champion my adnan")
+    res.send("cham my adnan")
 })
 //Routes name /name
 app.get('/name',function(req,res){
