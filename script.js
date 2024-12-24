@@ -75,13 +75,24 @@ const app =express();
 //facebook.com/ this is / is a route we called these type of / route
 // routess
 
-app.get('/',function(req,res){
-    res.send("cham my adnan")
+
+
+//MIDDLE WARE 
+//jab bhi server request accept karta hai waha se route ke beech pahuchne tak agar ap us request ko beech me rokte ho and kuchh perform karte ho ye element middleware kehlaata hai
+app.use(function(req,res,next){
+    console.log("middle ware chala");
+    next();
+})
+app.use(function(req,res,next){
+    console.log("middel ware ek bar aur chala");
+    next();
 })
 //Routes name /name
-app.get('/name',function(req,res){
+app.get('/',function(req,res){
+
     res.send("adnan ahmed");
 })
+app.get('/about',function(req,res){
+    res.send("about route")
+})
 app.listen(3000);
-//MIDDLE WARE 
-
