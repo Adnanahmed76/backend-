@@ -70,7 +70,9 @@
 //setting up a basic express application
 const express =require('express')
 const app =express();
-
+// for read data
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
 //route create karna 
 //facebook.com/ this is / is a route we called these type of / route
 // routess

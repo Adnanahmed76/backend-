@@ -1,0 +1,8 @@
+// form handling and working with the forms
+// handle backend process of forms and making sure the data coming from any fronted lib, fw templating engines
+// we still handle it at bakcend
+
+//Session Cookie
+//hum log kuchh bhi data frontend par browser par rakh sakte hai jab bhi ap kuch bhi request backend par kaorge wo fe par saved data automatically backend par chala jayega
+//tumne to bheja tha plain text par server ko mila blob which is not directly readable
+//ab is cheez ko handl karna padega ki hum us blob ko wapaas se readable kar sake
