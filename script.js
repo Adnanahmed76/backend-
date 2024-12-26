@@ -87,12 +87,28 @@ app.use(function(req,res,next){
     console.log("middel ware ek bar aur chala");
     next();
 })
+//second way using  Middleware function
+const logger = (req, res, next) => {
+    console.log(`${req.method} request for ${req.url}`);
+    next(); // Pass control to the next middleware
+  };
+
+  app.use(logger)
 //Routes name /name
 app.get('/',function(req,res){
 
     res.send("adnan ahmed");
 })
-app.get('/about',function(req,res){
-    res.send("about route")
+app.get('/profile',function(req,res,next){
+    return next(new Error("something broke!"));
 })
 app.listen(3000);
+
+//Error handling 
+
+app.use((function(err,req,res,next){
+    console.error(err.stack);
+    res.status(500).send("something broke we don't know what")
+
+}
+))
